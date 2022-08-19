@@ -27,6 +27,13 @@ window.onload = () => {
   let rSuit = Math.floor(Math.random() * suit.length);
   let rNumber = Math.floor(Math.random() * number.length);
 
+  function colors() {
+    return rSuit === "♠" || rSuit === "♣" ? "black" : "red";
+  }
+  document.getElementById("addSuit1").style.color = colors();
+
+  document.getElementById("addSuit2").style.color = colors();
+
   let suit1 = document.querySelector("#addSuit1");
   suit1.innerHTML = suit[rSuit];
 
@@ -35,10 +42,6 @@ window.onload = () => {
 
   let number1 = document.querySelector("#addNumber");
   number1.innerHTML = number[rNumber];
-
-  function color() {
-    return this.rSuit === "♠" || this.rSuit === "♣" ? "black" : "red";
-  }
 };
 
 onload();
